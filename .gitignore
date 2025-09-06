@@ -1,2 +1,5 @@
-testing that this is ignored
+gitignore is basically a file that says which files have to be ignored.
+.gitignore is a file that you do have to have pushed to your repository. 
 
+# says ignore this file when pushing to github. 
+.env
