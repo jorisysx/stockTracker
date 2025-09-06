@@ -3,3 +3,7 @@ gitignore is basically a file that says which files have to be ignored.
 
 # says ignore this file when pushing to github. 
 .env
+
+
+# dependencies
+/node_modules
