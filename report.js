@@ -1,7 +1,7 @@
 'use strict';
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
-
+ 
 var request = require('request');
 
 // replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
@@ -21,6 +21,5 @@ request.get({
       
       console.log(data);
 
-      console.log(data.Symbol)
     }
 });
