@@ -4,8 +4,11 @@ const apiKey = process.env.API_KEY;
  
 var request = require('request');
 
+//forloop through all stocks in portfolio from csv  then calculate % gain/loss and put it into a txt file
+
 // replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
-var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo';
+var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey='+apiKey;
+var yesterday = '2025-09-10'
 
 request.get({
     url: url,
@@ -19,7 +22,7 @@ request.get({
     } else {
       // data is successfully parsed as a JSON object:
       
-      console.log(data);
+      console.log(data['Time Series (Daily)'][yesterday]['4. close']);
 
     }
 });
