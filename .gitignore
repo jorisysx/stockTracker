@@ -7,3 +7,4 @@ gitignore is basically a file that says which files have to be ignored.
 
 # dependencies
 /node_modules
+test.js
