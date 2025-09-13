@@ -1,16 +1,20 @@
 'use strict';
-require('dotenv').config();
+
+import { DateTime } from "luxon"
+import dotenv from "dotenv";
+dotenv.config();
+import request from "request";
+
+
+const yesterday = DateTime.utc().minus({days: 2}).toISO().split("T")[0]
 const apiKey = process.env.API_KEY;
- 
-var request = require('request');
 
-//forloop through all stocks in portfolio from csv  then calculate % gain/loss and put it into a txt file
+const tickers = ["idcc", "tayd", "calm", "dds"]
 
-// replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
-var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey='+apiKey;
-var yesterday = '2025-09-10'
-
-request.get({
+for(const ticker of tickers){
+  var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=`+apiKey;
+  
+  request.get({
     url: url,
     json: true,
     headers: {'User-Agent': 'request'}
@@ -26,3 +30,10 @@ request.get({
 
     }
 });
+
+
+
+}
+
+
+

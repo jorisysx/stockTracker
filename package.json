@@ -1,4 +1,7 @@
 {
+
+  "type": "module",
+
   "dependencies": {
     "dotenv": "^17.2.2",
     "luxon": "^3.7.2",
